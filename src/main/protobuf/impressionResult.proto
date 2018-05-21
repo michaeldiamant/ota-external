@@ -26,14 +26,14 @@ message ImpressionResult {
 message WinInfo {
     uint64 timestamp = 1;
     uint32 nid = 2;
-    double price = 3;
+    double priceCpm = 3;
 }
 
 message AuctionInfo {
     repeated uint32 auctionParticipants = 1;
     uint32 auctionWinner = 2;
-    double winningBidPrice = 3;
-    double clearingPrice = 4;
+    double winningBidCpm = 3;
+    double clearingCpm = 4;
 }
 
 message AtariInfo {
@@ -43,6 +43,6 @@ message AtariInfo {
     uint64 matchedHash = 4;
     double randomPValue = 5;
     double explorePValue = 6;
-    double sampleRate = 7;
+    double rejectedSampleRate = 7;
 }
 
