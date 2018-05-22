@@ -52,7 +52,6 @@ val commonSettings = NtoggleDefaults.dtSettings ++ {
 val root = (project in file("."))
   .settings(name := "ota-external")
   .settings(commonSettings: _*)
-  .settings(publishArtifact := false)
   .settings(protocSettings: _*)
   .settings(Defaults.itSettings: _*)
   .disablePlugins(sbtassembly.AssemblyPlugin)
