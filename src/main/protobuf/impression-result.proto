@@ -15,7 +15,7 @@ option (scalapb.options) = {
 };
 
 message ImpressionResult {
-    uint64 timestampMs = 1;
+    uint64 decisionReachedTimestampMs = 1;
     string auctionId = 2;
     optimization.OptimizationAttributes attributes = 3;
     AuctionInfo auctionInfo = 4;
@@ -24,9 +24,9 @@ message ImpressionResult {
 }
 
 message WinInfo {
-    uint64 timestamp = 1;
-    uint32 nid = 2;
-    double priceCpm = 3;
+    uint64 timeInBeaconWinNotificationEvent = 1;
+    uint32 nidInBeaconWinNotificationEvent = 2;
+    double priceInBeaconWinNotificationEvent = 3;
 }
 
 message AuctionInfo {
@@ -37,6 +37,13 @@ message AuctionInfo {
 }
 
 message AtariInfo {
+    enum OptimizationResult {
+        UNKNOWN = 0;
+        ACCEPT = 1;     // a recommendation matched and the matchedPValue >= randomPValue OR explorePValue >= randomPValue
+        REJECT = 2;     // there were no matching recommendations AND matchedPValue < randomPValue OR explorePValue < randomPValue
+                        // a REJECT MAY be logged ONLY if the rejectedSampleRate > 0
+    }
+
     string indexChecksum = 1;
     double matchedPValue = 2;
     string matchedRuleId = 3;
@@ -44,5 +51,6 @@ message AtariInfo {
     double randomPValue = 5;
     double explorePValue = 6;
     double rejectedSampleRate = 7;
+    OptimizationResult result = 8;
 }
 
