@@ -17,7 +17,7 @@ option (scalapb.options) = {
 message ImpressionResult {
     uint64 decisionReachedTimestampMs = 1;
     string auctionId = 2;
-    optimization.OptimizationAttributes attributes = 3;
+    com.rubiconproject.dt.optimization.OptimizationAttributes attributes = 3;
     AuctionInfo auctionInfo = 4;
     WinInfo winInfo = 5;
     AtariInfo atariInfo = 6;
