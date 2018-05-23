@@ -24,9 +24,9 @@ message ImpressionResult {
 }
 
 message WinInfo {
-    uint64 timeInBeaconWinNotificationEvent = 1;
+    uint64 timeMsInBeaconWinNotificationEvent = 1;
     uint32 nidInBeaconWinNotificationEvent = 2;
-    double priceInBeaconWinNotificationEvent = 3;
+    double priceCpmInBeaconWinNotificationEvent = 3;
 }
 
 message AuctionInfo {
