@@ -1,0 +1,32 @@
+machine:
+  environment:
+    _JAVA_OPTIONS: "-Xmx2G"
+  java:
+    version: oraclejdk8
+
+dependencies:
+  pre:
+    - echo "deb http://dl.bintray.com/sbt/debian /" | sudo tee -a /etc/apt/sources.list.d/sbt.list
+    - sudo apt-get update && sudo apt-get install sbt bc
+
+  override:
+    - sbt ";clean ;compile":
+        timeout: 2000
+
+deployment:
+  publish:
+    branch: master
+    commands:
+      - sbt publish
+
+  feature:
+    branch: /feature\/.*/
+    commands:
+      - sbt publish
+
+experimental:
+  notify:
+    branches:
+      only:
+        - master
+        - /feature\/.*/
