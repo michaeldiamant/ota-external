@@ -15,12 +15,9 @@ option (scalapb.options) = {
 };
 
 message ImpressionResult {
-    uint64 createdTimestampMs = 1;
-    string auctionId = 2;
-    optimization.OptimizationAttributes attributes = 3;
-    optimization.OptimizationInfo.AuctionInfo auctionInfo = 4;
-    WinInfo winInfo = 5;
-    optimization.OptimizationInfo.AtariInfo atariInfo = 6;
+    string auctionId = 1;
+    optimization.OptimizationInfo optimizationInfo = 2;
+    WinInfo winInfo = 3;
 }
 
 message WinInfo {
