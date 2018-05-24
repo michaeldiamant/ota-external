@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-import "optimization.proto";
+import "optimization-info.proto";
 
 package impressionresult;
 
