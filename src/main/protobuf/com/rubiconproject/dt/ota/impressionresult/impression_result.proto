@@ -2,7 +2,7 @@ syntax = "proto3";
 
 import "optimization.proto";
 
-package impressionresult;
+package com.rubiconproject.dt.ota.impressionresult;
 
 option java_package = "com.rubiconproject.dt.ota.impressionresult.java";
 
