@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-import "optimization-info.proto";
+import "optimization_info.proto";
 
-package impressionresult;
+package com.rubiconproject.dt.ota.impressionresult;
 
 option java_package = "com.rubiconproject.dt.ota.impressionresult.java";
 
